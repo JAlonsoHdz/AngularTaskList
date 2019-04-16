@@ -1,5 +1,5 @@
 export class Person {
     id:number;
-    name:String;
+    firstName:String;
     lastName:String;
 }

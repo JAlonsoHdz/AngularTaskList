@@ -4,16 +4,18 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NewComponent } from './new/new.component';
 import { AddComponent } from './Person/add/add.component';
 import { EditComponent } from './Person/edit/edit.component';
 import { DeleteComponent } from './Person/delete/delete.component';
 import { ShowListComponent } from './Person/show-list/show-list.component';
+import {FormsModule} from '@angular/forms';
+import {ServiceService} from '../app/Service/service.service';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewComponent,
     AddComponent,
     EditComponent,
     DeleteComponent,
@@ -22,9 +24,10 @@ import { ShowListComponent } from './Person/show-list/show-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient } from '@angular/common/http';
 import {Person} from '../Model/Person';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class ServiceService {
 
   constructor(private http:HttpClient) { }
 
-  Url = 'http://localhost:8080/sample/person';
+  Url = 'http://localhost:8080/todoangular/persons';
 
   getPersons() {
     return this.http.get<Person[]>(this.Url);

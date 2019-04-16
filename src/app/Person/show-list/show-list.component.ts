@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {ServiceService} from '../../Service/service.service'
+import { Person } from 'src/app/Model/Person';
+
 
 @Component({
   selector: 'app-show-list',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowListComponent implements OnInit {
 
-  constructor() { }
+  persons:Person[];
+  constructor(private service:ServiceService, private router:Router ) { }
 
   ngOnInit() {
+    this.service.getPersons()
+    .subscribe(data=>{
+      this.persons=data;
+    })
   }
 
 }
