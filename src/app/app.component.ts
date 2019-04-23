@@ -7,16 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo';
+  title = 'task list';
 
-  constructor(private router:Router){}
+  constructor(private router: Router) {}
 
   List() {
-    this.router.navigate(["list"]);
+    this.router.navigate(['list']);
   }
 
   Add() {
-    this.router.navigate(["add"]);
+    this.router.navigate(['add']);
   }
 }
 

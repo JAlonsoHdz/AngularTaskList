@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {ServiceService} from '../../Service/service.service'
+import {ServiceService} from '../../Service/service.service';
 import { Person } from 'src/app/Model/Person';
 
 
@@ -11,14 +11,14 @@ import { Person } from 'src/app/Model/Person';
 })
 export class ShowListComponent implements OnInit {
 
-  persons:Person[];
-  constructor(private service:ServiceService, private router:Router ) { }
+  persons: Person[];
+  constructor(private service: ServiceService, private router: Router ) { }
 
   ngOnInit() {
     this.service.getPersons()
-    .subscribe(data=>{
-      this.persons=data;
-    })
+    .subscribe(data => {
+      this.persons = data;
+    });
   }
 
 }

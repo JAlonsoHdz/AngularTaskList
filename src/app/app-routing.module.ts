@@ -5,9 +5,9 @@ import {AddComponent} from './Person/add/add.component';
 import {EditComponent} from './Person/edit/edit.component';
 
 const routes: Routes = [
-  {path: 'list', component:ShowListComponent},
-  {path: 'add', component:AddComponent},
-  {path: 'edit', component:EditComponent}
+  {path: 'list', component: ShowListComponent},
+  {path: 'add', component: AddComponent},
+  {path: 'edit', component: EditComponent}
 ];
 
 

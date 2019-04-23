@@ -1,3 +1,32 @@
-<p>
-  add works!
-</p>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+        <h3>Add new person</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" placeholder="ID" class="form-control" disabled/></td>
+            <td><input type="text" [(ngModel)]="fN" placeholder="FIRST NAME" class="form-control"/></td>
+            <td><input type="text" [(ngModel)]="lN" placeholder="LAST NAME" class="form-control"/></td>
+            <td>
+              <button class="btn btn-warning" (click)="submit()">Save</button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
