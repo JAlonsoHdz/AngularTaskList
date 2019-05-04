@@ -11,14 +11,22 @@ import { Person } from 'src/app/Model/Person';
 })
 export class ShowListComponent implements OnInit {
 
-  persons: Person[];
-  constructor(private service: ServiceService, private router: Router ) { }
+  persons:Person[];
+  constructor(private service:ServiceService, private router:Router ) { }
+
 
   ngOnInit() {
     this.service.getPersons()
-    .subscribe(data => {
-      this.persons = data;
-    });
+    .subscribe(data=>{
+      this.persons=data;
+    })
   }
+
+  //edit(person) { 
+    
+   // this.router.navigate(['/edit', {id: person.id, fN: person.firstName, lN: person.lastName }]); // This is where the error might be
+    
+    
+ // }
 
 }

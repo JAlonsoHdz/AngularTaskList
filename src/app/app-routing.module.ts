@@ -7,7 +7,8 @@ import {EditComponent} from './Person/edit/edit.component';
 const routes: Routes = [
   {path: 'list', component: ShowListComponent},
   {path: 'add', component: AddComponent},
-  {path: 'edit', component: EditComponent}
+  {path: 'edit', component: EditComponent},
+  {path: 'edit/:id', component: EditComponent}
 ];
 
 
