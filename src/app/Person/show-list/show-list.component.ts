@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import {ServiceService} from '../../Service/service.service';
 import { Person } from 'src/app/Model/Person';
 
@@ -12,21 +12,18 @@ import { Person } from 'src/app/Model/Person';
 export class ShowListComponent implements OnInit {
 
   persons:Person[];
-  constructor(private service:ServiceService, private router:Router ) { }
-
-
-  ngOnInit() {
-    this.service.getPersons()
-    .subscribe(data=>{
-      this.persons=data;
-    })
+  constructor(private service:ServiceService, private aRoute: ActivatedRoute ) { 
+           
   }
 
-  //edit(person) { 
-    
-   // this.router.navigate(['/edit', {id: person.id, fN: person.firstName, lN: person.lastName }]); // This is where the error might be
-    
-    
- // }
+  ngOnInit() {
+    // Invoking resolver service
+    this.persons = this.aRoute.snapshot.data['personList'];
+  }
 
+  delete(person: Person) { 
+    this.service.deletePerson(person);  
+    alert("User removed");
+    
+  }
 }

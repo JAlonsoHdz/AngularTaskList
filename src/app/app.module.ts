@@ -9,7 +9,8 @@ import { EditComponent } from './Person/edit/edit.component';
 import { DeleteComponent } from './Person/delete/delete.component';
 import { ShowListComponent } from './Person/show-list/show-list.component';
 import {FormsModule} from '@angular/forms';
-import {ServiceService} from '../app/Service/service.service';
+import {ServiceService} from './Service/service.service';
+import { ResolverService } from './Service/resolver.service';
 
 
 
@@ -27,7 +28,7 @@ import {ServiceService} from '../app/Service/service.service';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [ServiceService],
+  providers: [ServiceService, ResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

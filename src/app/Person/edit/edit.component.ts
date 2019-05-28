@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Event, NavigationEnd } from '@angular/router';
 import {ServiceService} from '../../Service/service.service';
 
 
@@ -38,12 +38,19 @@ export class EditComponent implements OnInit {
     
   }
 
-  edit() {
-    
-      this.service.editPerson(this.id, this.fN, this.lN);
+  
+
+  edit(delay: number= 2000) {
+          
+
+      this.service.editPerson(this.id, this.fN, this.lN); 
       this.router.navigateByUrl('/list');
 
-    
+       // setTimeout(()=> this.router.navigateByUrl('/list'), delay);
+        
+     
+
+
   }
 
 }
